@@ -1,5 +1,4 @@
 export class Element {
-    constructor(){}
 
     static createNode(element){
         return document.createElement(element);

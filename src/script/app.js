@@ -8,8 +8,7 @@ Promise.all([userReq, postReq])
         .then((res) => {
             const users = res[0];
             const posts = res[1].sort(() => .5 - Math.random()).slice(0, 10);
-            console.log(users);
-            
+        
             posts.forEach((post) => {
                 
                 // create Elements from class Element
@@ -27,10 +26,7 @@ Promise.all([userReq, postReq])
 
                 paragTitle.innerHTML = post.title;
                 paragBody.innerHTML = post.body;
-                paragUser.innerHTML = `By: `;
-                
-
-
+                paragUser.innerHTML = `By: ${users[post.userId - 1].name}`;
 
                 // append Elements using class Element
 
