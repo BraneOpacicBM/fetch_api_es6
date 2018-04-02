@@ -1,13 +1,8 @@
 import '../assets/styles/main.scss';
 import {urlPosts, urlUsers, div} from './modules/vars';
 import {Element} from './modules/element';
+import {userReq, postReq} from './modules/fetchPromise';
 
-
-let userReq = fetch(urlUsers)
-.then((res) => res.json());
-
-let postReq = fetch(urlPosts)
-.then((res) => res.json());
 
 Promise.all([userReq, postReq])
         .then((res) => {
@@ -16,7 +11,7 @@ Promise.all([userReq, postReq])
             console.log(users);
             
             posts.forEach((post) => {
-
+                
                 // create Elements from class Element
 
                 let itemContainer = Element.createNode("div");
@@ -28,10 +23,11 @@ Promise.all([userReq, postReq])
                 let paragUser = Element.createNode("p");
                 Element.addClass(paragUser, "user");
 
-                // fill up the content via JSON
+                // fill up the content with JSON
 
                 paragTitle.innerHTML = post.title;
                 paragBody.innerHTML = post.body;
+                paragUser.innerHTML = `By: `;
                 
 
 
