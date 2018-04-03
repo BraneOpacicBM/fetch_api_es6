@@ -1,4 +1,4 @@
-import {urlPosts, urlUsers} from './vars';
+import {urlPosts, urlUsers} from './consts';
 
  class FetchPromise {
     fetchingPromise(url){
@@ -8,8 +8,8 @@ import {urlPosts, urlUsers} from './vars';
 }
 
 
-let userRequest = new FetchPromise();
-export let userReq = userRequest.fetchingPromise(urlUsers);
+const userRequest = new FetchPromise();
+export const userReq = userRequest.fetchingPromise(urlUsers);
 
-let postRequest = new FetchPromise();
-export let postReq = postRequest.fetchingPromise(urlPosts);
+const postRequest = new FetchPromise();
+export const postReq = postRequest.fetchingPromise(urlPosts);

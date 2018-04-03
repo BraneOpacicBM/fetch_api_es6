@@ -1,5 +1,5 @@
 import '../assets/styles/main.scss';
-import {urlPosts, urlUsers, div} from './modules/vars';
+import {urlPosts, urlUsers, div} from './modules/consts';
 import {Element} from './modules/element';
 import {userReq, postReq} from './modules/fetchPromise';
 
