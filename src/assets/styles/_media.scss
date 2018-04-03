@@ -1,0 +1,14 @@
+@mixin regularTablet {
+    @media screen and (max-width: 890px) {
+      @content;
+    }
+  }
+
+
+@mixin regularDesktop {
+    @media screen and (max-width: 1390px) {
+      @content;
+    }
+  }
+
+  
