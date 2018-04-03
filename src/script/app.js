@@ -6,7 +6,9 @@ import {userReq, postReq} from './modules/fetchPromise';
 
 Promise.all([userReq, postReq])
         .then((res) => {
+            // get the data
             const users = res[0];
+            // shuffle the posts and get only 10
             const posts = res[1].sort(() => .5 - Math.random()).slice(0, 10);
         
             posts.forEach((post) => {
