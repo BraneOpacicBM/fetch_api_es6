@@ -1,3 +1,62 @@
+@import "_media.scss";
+
+html, body {
+    box-sizing: border-box;
+}
+
+h1#post-title {
+    text-align: center;
+    font-size: 35px;
+    padding-bottom: 10px;
+}
+
 .posts {
     display: flex;
+    flex-wrap: wrap;
+    .item {
+        flex: 1;
+        flex-basis: 45%;
+        padding: 10px 10px;
+        border: 2px solid rgb(92, 85, 85);
+        border-radius: 5px;
+        margin: 5px 5px;
+        
+
+        box-sizing: border-box;
+        p.title {
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+        p.content {
+            font-size: 14px;
+        }
+
+        p.user {
+            color: rgb(172, 82, 82);
+        }
+    }
+
+     
+
+}
+
+
+@include regularDesktop {
+    p.user {
+        font-size: 10px;
+    }
+
+    .posts .item p.content {
+        font-size: 12px;
+    }
+}
+
+@include regularTablet {
+    .posts {
+        .item {
+            display: block;
+            width: 100%;
+            flex-basis: 100%;
+        }
+    }
 }
